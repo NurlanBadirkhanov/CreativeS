@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.creatives.vakansiyaaz.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <dialog
+        android:id="@+id/addFragment"
+        android:name="com.creatives.vakansiyaaz.ADD.AddCategoryFragment"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add" />
+    <fragment
+        android:id="@+id/addVacancyProFragment"
+        android:name="com.creatives.vakansiyaaz.ADD.AddVacancyProFragment"
+        android:label="fragment_add_vacancy_pro"
+        tools:layout="@layout/fragment_add_vacancy_pro" />
+    <fragment
+        android:id="@+id/addVacancyFragment"
+        android:name="com.creatives.vakansiyaaz.ADD.AddVacancyFragment"
+        android:label="fragment_add_vacany"
+        tools:layout="@layout/fragment_add_vacany">
+        <action
+            android:id="@+id/action_addVacancyFragment_to_spheraWorkFragment"
+            app:destination="@id/spheraWorkFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_addVacancyFragment_to_cityFragment"
+            app:destination="@id/cityFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/spheraWorkFragment"
+        android:name="com.creatives.vakansiyaaz.ADD.Spinners.SpheraWorkFragment"
+        android:label="fragment_sfera_work"
+        tools:layout="@layout/fragment_sfera_work" />
+    <fragment
+        android:id="@+id/cityFragment"
+        android:name="com.creatives.vakansiyaaz.ADD.Spinners.CityFragment"
+        android:label="fragment_city"
+        tools:layout="@layout/fragment_city" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.creatives.vakansiyaaz.Profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/slide_down"
+            app:popEnterAnim="@anim/slide_up"
+            app:popExitAnim="@anim/slide_down" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.creatives.vakansiyaaz.Profile.SettingsItem.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/myAdsFragment"
+        android:name="com.creatives.vakansiyaaz.Profile.ItemProfile.MyAdsItem.AllMyAdsFragment"
+        android:label="fragment_my_ads"
+        tools:layout="@layout/fragment_my_ads" />
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.creatives.vakansiyaaz.Profile.ItemProfile.PaymentFragment"
+        android:label="fragment_payment"
+        tools:layout="@layout/fragment_payment" />
+    <fragment
+        android:id="@+id/addLinkFragment"
+        android:name="com.creatives.vakansiyaaz.ADD.AddLinkFragment"
+        android:label="fragment_add_link"
+        tools:layout="@layout/fragment_add_link" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.creatives.vakansiyaaz.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.creatives.vakansiyaaz.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/weFragment"
+        android:name="com.creatives.vakansiyaaz.Profile.SettingsItem.Item.WeFragment"
+        android:label="fragment_we"
+        tools:layout="@layout/fragment_we" />
+    <fragment
+        android:id="@+id/policyFragment"
+        android:name="com.creatives.vakansiyaaz.Profile.SettingsItem.Item.PolicyFragment"
+        android:label="fragment_policy"
+        tools:layout="@layout/fragment_policy" />
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="com.creatives.vakansiyaaz.Profile.ItemProfile.StatisticsFragment"
+        android:label="fragment_statistics"
+        tools:layout="@layout/fragment_statistics" />
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.creatives.vakansiyaaz.Profile.SettingsItem.Item.RulesFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_rules" />
+</navigation>

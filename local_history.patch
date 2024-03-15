@@ -1,0 +1,36 @@
+Index: app/src/main/java/com/creatives/vakansiyaaz/ADD/Spinners/SpinnerViewModel/SpinnerViewModel.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/creatives/vakansiyaaz/ADD/Spinners/SpinnerViewModel/SpinnerViewModel.kt b/app/src/main/java/com/creatives/vakansiyaaz/ADD/Spinners/SpinnerViewModel/SpinnerViewModel.kt
+--- a/app/src/main/java/com/creatives/vakansiyaaz/ADD/Spinners/SpinnerViewModel/SpinnerViewModel.kt	
++++ b/app/src/main/java/com/creatives/vakansiyaaz/ADD/Spinners/SpinnerViewModel/SpinnerViewModel.kt	(date 1710532613214)
+@@ -1,4 +1,25 @@
+ package com.creatives.vakansiyaaz.ADD.Spinners.SpinnerViewModel
+ 
+-class SpinnerViewModel {
++import androidx.lifecycle.MutableLiveData
++import androidx.lifecycle.ViewModel
++
++class SpinnerViewModel : ViewModel() {
++    val city = MutableLiveData<String?>()
++    val time = MutableLiveData<String?>()
++    val hegreeEdu = MutableLiveData<String?>()
++    val spheraWork = MutableLiveData<String?>()
++    val expirence = MutableLiveData<String?>()
++    val description = MutableLiveData<String?>()
++
++    fun resetValues() {
++        city.value = null
++        time.value = null
++        hegreeEdu.value = null
++        spheraWork.value = null
++        expirence.value = null
++        description.value = null
++    }
++
++
++
+ }
+\ No newline at end of file

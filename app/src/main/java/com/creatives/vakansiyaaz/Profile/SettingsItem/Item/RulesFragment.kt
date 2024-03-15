@@ -1,0 +1,33 @@
+package com.creatives.vakansiyaaz.Profile.SettingsItem.Item
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
+import com.creatives.vakansiyaaz.R
+import com.creatives.vakansiyaaz.databinding.FragmentRulesBinding
+import com.creatives.vakansiyaaz.home.popBack
+
+
+class RulesFragment : Fragment() {
+    private lateinit var binding:FragmentRulesBinding
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentRulesBinding.inflate(layoutInflater,container,false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.bExit.setOnClickListener {
+            popBack()
+        }
+
+    }
+
+
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".Login.Number.NumberCodeFragment">
+
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mobile_ok"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Введите Код из смс"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp" />
+
+    <com.goodiebag.pinview.Pinview
+        android:id="@+id/pinview"
+
+        app:pinBackground="@drawable/background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cursorVisible="false"
+        app:forceKeyboard="true"
+        app:hint="0"
+        app:inputType="number"
+        app:password="false"
+        app:pinHeight="40dp"
+        app:pinLength="6"
+        app:pinWidth="40dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bOk"
+        style="@style/HomeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/background1"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:includeFontPadding="false"
+        android:text="Готово"
+        android:textColor="#000000"
+        app:backgroundTint="#F8B9D8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

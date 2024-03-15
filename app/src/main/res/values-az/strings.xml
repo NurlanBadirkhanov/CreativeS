@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vakanciya.az</string>
+    <string name="action_settings">ayarlar</string>
+    <string name="saveOk">Данные успешно сохранены!</string>
+    <string name="str_home">Главная</string>
+    <string name="str_basket">Избранные</string>
+    <string name="str_search">Поиск</string>
+    <string name="str_profile">Профиль</string>
+    <string name="tv_sign">Войти</string>
+
+    <string name="setting">Ayarlar</string>
+    <string name="setting_1">Tətbiq Siyasəti</string>
+    <string name="setting_2">Elan Yerləşdirmə Qaydaları</string>
+    <string name="setting_3">Hesabdan Çıxış</string>
+    <string name="we">Haqqımızda</string>
+    <string name="b_save">Сохранить</string>
+
+    <string name="app_policy_title">Tətbiqat Siyasəti</string>
+    <string name="app_policy_1">"Vakansiya.az" tətbiqatına xoş gəlmisiniz! Bizim tətbiqat siyasətimiz aşağıdakı əsas məsələləri əhatə edir:</string>
+    <string name="app_policy_2">Tətbiqatın Məqsədi: Biz iş axtarışı və təklif etmə, əməkdaşların və işəgötürənlərin keyfiyyətli əlaqələrini təmin edərək vakansiyaların və işəgötürənlərin əlaqələrinə imkan veririk.</string>
+    <string name="app_policy_3">Təhlükəsizlik və Gizlilik: Biz sizin məlumatlarınızın təhlükəsizliyinə diqqət yetiririk və şəxsi məlumatlarınızın gizliliyini qorumağa çalışırıq. Ətraflı məlumat üçün gizlilik siyasətimizə baxın.</string>
+    <string name="app_policy_4">Vakansiyaların Yerləşdirilməsi: İstifadəçiləri qanunlara və qaydalara hörmətlə vakansiyalar yerləşdirməyə çağırırıq. Bu qaydaların pozulması hesabın bloklanmasına gətirə bilər.</string>
+    <string name="app_policy_5">İstifadəçinin Məsuliyyəti: İstifadəçilər yerləşdirilən məzmun üçün məsuliyyətdə olurlar və etik standartlara və qanunlara əməl etməlidirlər.</string>
+    <string name="app_policy_6">"Vakansiya.az" Tətbiqatında Şəxsi Məlumatların İşlənməsi Razılaşması</string>
+    <string name="app_policy_7">1) Ümumi Mövzular: "Vakansiya.az" tətbiqatından istifadə edərkən istifadəçinin nömrəsi və elektron poçt ünvanı kimi aşağıdakı şəxsi məlumatları təqdim etməyi razılaşır.</string>
+    <string name="app_policy_8">2) Məlumatların Toplanmasının Məqsədi: Nömrə, işçi hesabının yaradılması və vakansiyaların yerləşdirilməsi kontekstində istifadəçilər arasında əlaqənin təmin edilməsi üçün istifadə olunur. Elektron poçt ünvanı xəbərdarlıqlar və əlaqəyə qayıdış üçün istifadə oluna bilər.</string>
+    <string name="app_policy_9">3) Məlumatların Təhlükəsizliyi: Biz toplanmış məlumatların təhlükəsizliyini təmin etmək üçün tədbirlər götürürük və onların qeyri-səlahiyyətli istifadəsini və yayılmasını aradan qaldırmağa çalışırıq.</string>
+    <string name="app_policy_10">4) Məlumatların İşlənməsi: İstifadəçinin şəxsi məlumatları tətbiqat funksiyalarının təhlükəsizliyini təmin etmək və şəxsi təcrübə təmin etmək üçün istifadə oluna bilər.</string>
+    <string name="app_policy_11">5) Razılaşmanın Geri Çəkilməsi: İstifadəçi "Vakansiya.az" tətbiqatında şəxsi məlumatların işlənməsinə razılaşmasını geri çəkə bilər, tətbiqatın dəstək bölməsi vasitəsilə bizimlə əlaqə saxlayaraq.</string>
+    <string name="app_policy_12">6) Məlumatların Saxlanma Müddəti: İstifadəçinin şəxsi məlumatları bu razılaşmanın təsviri məqsədələri üçün lazım olduğu müddətdə saxlanıla bilər.</string>
+    <string name="app_policy_13">"Vakansiya.az" tətbiqatından istifadə etmək bu şərtləri şərtləri mənasına gəlir. Ətraflı məlumat üçün gizlilik siyasətimizi diqqətlə oxuyun.</string>
+    <string name="app_policy_14">Tələbəlik və Tələbə Evləri Platforması "Vakansiya.az"da Qarşıdurma və Nüsxələmə Siyasəti</string>
+    <string name="app_policy_15">1) Tanımlama və Blok: Biz istifadəçilərin fəaliyyətini aktiv olaraq monitorlaşır və potensial dolandırıcıları identifikasiya edirik. Təhlükəsizlik alqoritmləri və əl ilə yoxlama bizə istifadə qaydalarını pozan hesabları blok etmək imkanı verir.</string>
+    <string name="app_policy_16">2) Spamın Qadağanı: Spam və istənilən reklamın yerləşdirilməsi qadağandır. Filtrlər və məzmun analizi spam aktivliklərini aşkar etməyə və blok etməyə kömək edir.</string>
+    <string name="app_policy_17">3) Məlumatların Yoxlanılması: Biz yerləşdirilən məlumatı düzgünlüyü üçün nəzarət etməyi ənənə halına gətiririk. Yalana məlumat verənlər bloklana bilər.</string>
+    <string name="app_policy_18">4) Dolandırıcılıqla Qarşıdurma: Biz dolandırıcılığa qarşı sıfır təxirə qoyuruq. Tətbiqatın qaydalarını və ya qanunları pozan aktivliklər hesabın dərhal bloklanmasına gətirə bilər.</string>
+    <string name="app_policy_19">5) İstifadəçilərin Bildirişi: İstifadəçilər tətbiqat dəstəyi bölməsində şübhəli fəaliyyətlə bağlı bildirişdə buluna bilərlər. Biz bu bildirişləri cəmiyyətin təhlükəsizliyini təmin etməkdə göz önündə tuturuq.</string>
+    <string name="app_policy_20">20) Haqqımızda: Biz istifadəçilər üçün təhlükəsiz və güvənli bir mühit yaratmağı hədəfləyən bir komandayıq. Zərərli fəaliyyətlərə qarşı sıfır tolerantlıq siyasətimiz sizin təhlükəsizliyinizi və "Vakansiya.az" tətbiqatından zövq almağınızı təmin etməyə yönəldilmişdir.</string>
+    <string name="app_policy_21">"Vakansiya.az" Tətbiqatında Feedback və Dəstək</string>
+    <string name="app_policy_22">1) Sizin Fikrinizin Qiyməti: Biz hər bir istifadəçinin fikrinin qiymətini tanırıq. Sizin feedbackiniz funksional və tətbiqat keyfiyyətini yaxşılaşdırmağa kömək edir.</string>
+    <string name="app_policy_23">2) Sürətli Reaksiya: Bizim dəstək komandası istifadəçi sorğularına mümkün qədər tez reaksiya verərək sizin vaxtınızı qiymətləndirir və tezliklə cavab vermək üçün bütün imkanları ələ alır.</string>
+    <string name="app_policy_24">3) Feedbacklərə Əsaslanan İyiləşmələr: Sizin rəyləriniz tətbiqatda iyiləşmələrin qarşısını alır. Biz feedbackləri düzgün şəkildə analiz edirik və sizin tətbiqatdan istifadə təcrübənizi mümkün qədər rahat edirik.</string>
+    <string name="app_policy_25">4) Anonimlik: Biz sizin gizliliyinizə hörmət edirik. Feedback verə biləcəyiniz anonimliyinizi təmin etmək istifadəçilər üçün əlverişli və təhlükəsizdir.</string>
+
+
+    <string name="app_rules">Elanların Yerləşdirilmə\nQaydaları</string>
+    <string name="rules_0">1. Tema: Elanlar yalnızca Vakansiya.az platformasında vakansiyaların yerləşdirilməsi ilə əlaqədar olmalıdır. Vakansiyalar iş axtarışı və təklifləri, namizədlərin tələbləri və digər işə götürmə aspektləri ilə əlaqəlidir.</string>
+    <string name="rules_1">2. Etik olmayan məzmun: Pornoqrafiya, sərt məlumatlar, və ya yetkinlər üçün nəzərdə tutulan məzmunları içərən materiallar qadağandır.</string>
+    <string name="rules_2">3. Zorakılıq və terror: Zorakılıq, terror aktları və ya digər ziyanverici fəaliyyətlərə dair şəkillər və ya təsvirləri olan elanlar qadağandır.</string>
+    <string name="rules_3">4. Qadağan olunan əşyaların təbliği: Qanunsuz, təhlükəli və ya qadağan olunmuş obyektləri, xidmətləri və ya praktikaları reklam etmək və ya təşviq etmək qadağandır.</string>
+    <string name="rules_4">5. Aldatma və dolandırıcılıq: Vakansiyalar və ya namizədlərə tələblər haqqında yanlış və ya aldatıcı məlumatlarla elan yerləşdirmək qadağandır.</string>
+    <string name="rules_5">6. Laqeyd məzmun: Laqeyd lüğət, təhqir və ya digər qışqırma formalarını içərən yayımlamalar qadağandır.</string>
+    <string name="rules_6">7. Keyfiyyət və əlaqəli olma: Elanlar keyfiyyətli, məlumatlı və vakansiyalar və namizədlərə tələblərlə əlaqəli olmalıdır.</string>
+    <string name="rules_7">8. Spam və çoxsaylı yayımlamalar: Eyni növ elanların kütləvi yerləşdirilməsi və təhqir edici spam qadağandır.</string>
+    <string name="rules_8">9. Müəllif hüquqları: Üçüncü tərəflərin müəllif hüquqlarını pozan materialların yerləşdirilməsi qadağandır.</string>
+    <string name="rules_9">10. İctimai normlar: Yayımlamalar ictimai normları və cəmiyyətin qiymətlərini pozmaq yasaqlıdır.</string>
+    <string name="rules_10">11. Şəkillərin formatı: Təqdim edilən şəkillər açıq, əlaqəli və vakansiyaya və ya şirkətə görsəl tələblərə cavab verməlidir.</string>
+    <string name="rules_11">12. Məlumatın dəqiqliyi: Elanın təqdim olunan məlumatı dəqiq olmalı və vakansiyaya faktiki olaraq cavab verməlidir.</string>
+    <string name="rules_12">13. Əlaqə məlumatları: Yalan və ya etibarlı olmayan əlaqə məlumatlarının yerləşdirilməsi qadağandır. Göstərilmiş bütün əlaqə məlumatları aktual olmalıdır və şirkətin nümayəndələri ilə əlaqə qurmağa imkan vermelidir.</string>
+    <string name="rules_14">14. Qanun və normativlərin nəzarəti: Yerləşdirilmiş elanlar və şərhlər işə götürmə və vakansiyaların yerləşdirilməsi ilə əlaqəli olan cari qanun və normativləri pozmaq yasaqlıdır.</string>
+    <string name="rules_18">15. Elanın effektiv müddəti: Elanın effektiv müddətinin maksimum müddətini təyin etmək təkliflərin aktual olmasını dəstəkləyən qaydalardan biri ola bilər.</string>
+    <string name="rules_19">16. Etik standartların nəzarəti: Qaydalar həm təcrübəli işə götürmə və vakansiyaların yerləşdirilməsi sahəsində etik standartların nəzarətini də əhatə edə bilər.</string>
+    <string name="rules_title">Elanların Yerləşdirilmə Qaydaları</string>
+    <string name="vakanciya_az">Hörmətlə Vakanciya.az</string>
+    <string name="title">Заголовок</string>
+
+
+</resources>

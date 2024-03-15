@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "327713105657",
+    "firebase_url": "https://vakansiya-az-default-rtdb.firebaseio.com",
+    "project_id": "vakansiya-az",
+    "storage_bucket": "vakansiya-az.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327713105657:android:450afe83e91860a792e428",
+        "android_client_info": {
+          "package_name": "com.creatives.vakansiyaaz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "327713105657-jpsbi2ombb29rolijqmacko91795he16.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.creatives.vakansiyaaz",
+            "certificate_hash": "69724d2b0da59cd66eddba61f07294071171ef51"
+          }
+        },
+        {
+          "client_id": "327713105657-icdnot09hkjac39mgccustmovje9gsjh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxPMnSYx3XJ0g1DamLALAfe4jn-PsxI5s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "327713105657-icdnot09hkjac39mgccustmovje9gsjh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

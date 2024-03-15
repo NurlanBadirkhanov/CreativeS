@@ -1,0 +1,8 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:startColor="@color/signin"
+        android:endColor="@color/buttonColor"
+        android:type="linear"
+        android:angle="5"/>
+</shape>

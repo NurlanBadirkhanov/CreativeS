@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.creatives.vakansiyaaz.MainActivity">
+    <item
+        android:id="@+id/action_home"
+        android:icon="@drawable/baseline_home_24"
+        android:title="@string/str_home" />
+
+    <item
+        android:id="@+id/action_favorite"
+        android:icon="@drawable/baseline_favorite_24"
+        android:title="@string/str_basket" />
+    <item
+        android:id="@+id/action_add"
+        android:enabled="false"
+        android:title="" />
+
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/baseline_search_24"
+        android:title="@string/str_search" />
+
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/baseline_account_circle_24"
+        android:title="@string/str_profile" />
+
+
+</menu>

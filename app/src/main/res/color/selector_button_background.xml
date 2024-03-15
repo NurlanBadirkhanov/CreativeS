@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/color/selector_button_background.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/selector_bottom_nav_item_color" android:state_pressed="true" /> <!-- Цвет при нажатии -->
+    <item android:color="#E3E3E3" /> <!-- Цвет по умолчанию -->
+</selector>

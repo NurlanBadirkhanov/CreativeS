@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <style name="MyConstraintLayoutStyle" parent="Widget.AppCompat.ConstraintLayout">-->
+<!--        &lt;!&ndash; Добавьте атрибуты стиля, если необходимо &ndash;&gt;-->
+<!--    </style>-->
+
+
+    <style name="AppSearchViewStyle">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:queryHint">Search</item>
+        <item name="android:iconifiedByDefault">false</item>
+        <item name="queryHint">Search</item>
+    </style>
+
+</resources>
