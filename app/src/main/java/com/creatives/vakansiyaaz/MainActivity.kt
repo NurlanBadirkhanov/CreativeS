@@ -4,8 +4,11 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -24,12 +27,17 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        viewModel = ViewModelProvider(this)[SpinnerViewModel::class.java]
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.asfa)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
         navController = findNavController(id.nav_host_fragment_activity_main)
+        viewModel = ViewModelProvider(this)[SpinnerViewModel::class.java]
         buttons()
         menuItem()
     }
@@ -68,10 +76,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun menuItem() {
         binding.bottomAppBar.selectedItemId = id.action_home
+
         binding.bottomAppBar.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 id.action_home -> {
-                    navController.navigate(id.homeFragment)
+                    navController.navigate(id.allFragment)
                     true
                 }
                 id.action_profile -> {

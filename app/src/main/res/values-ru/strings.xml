@@ -64,5 +64,7 @@
     <string name="vakanciya_az">С Уважением Vakanciya.az</string>
     <string name="kiraye.az">Hörmətlə Vakanciya.az</string>
     <string name="title">Заголовок</string>
+    <string name="google">Google временно не доступен!</string>
+    <string name="price_text_isEmptv">Договорная</string>
 
 </resources>

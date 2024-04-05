@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/allFragment">
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.creatives.vakansiyaaz.home.HomeFragment"
@@ -113,4 +113,9 @@
         android:name="com.creatives.vakansiyaaz.Profile.SettingsItem.Item.RulesFragment"
         android:label="fragment_rules"
         tools:layout="@layout/fragment_rules" />
+    <fragment
+        android:id="@+id/allFragment"
+        android:name="com.creatives.vakansiyaaz.home.AllFragment"
+        android:label="fragment_all"
+        tools:layout="@layout/fragment_all" />
 </navigation>

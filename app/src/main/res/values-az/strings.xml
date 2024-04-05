@@ -63,7 +63,9 @@
     <string name="rules_19">16. Etik standartların nəzarəti: Qaydalar həm təcrübəli işə götürmə və vakansiyaların yerləşdirilməsi sahəsində etik standartların nəzarətini də əhatə edə bilər.</string>
     <string name="rules_title">Elanların Yerləşdirilmə Qaydaları</string>
     <string name="vakanciya_az">Hörmətlə Vakanciya.az</string>
-    <string name="title">Заголовок</string>
+    <string name="title">Başlıq</string>
+    <string name="google">Google müvəqqəti olaraq işləmir!</string>
+    <string name="price_text_isEmptv">Договорная</string>
 
 
 </resources>

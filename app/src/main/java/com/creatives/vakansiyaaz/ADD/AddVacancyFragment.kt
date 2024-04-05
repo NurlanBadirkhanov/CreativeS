@@ -1,5 +1,6 @@
 package com.creatives.vakansiyaaz.ADD
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -51,6 +52,29 @@ class AddVacancyFragment : Fragment() {
 
     }
 
+    private fun bClear() {
+        binding.apply {
+            val vm = viewModel
+            vm.spheraWork.value = "Сфера"
+            vm.expirence.value = "Опыт работы"
+            vm.city.value = "Город"
+            vm.hegreeEdu.value = "Образование"
+            vm.time.value = "График работы"
+            vm.description.value = "Напишите действия"
+            binding.editName.text.clear()
+            binding.edPrice.text.clear()
+            binding.editGmail.text.clear()
+            binding.editNumber.text.clear()
+            binding.edTitle.text.clear()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        bClear()
+    }
+
+
     private fun bOk() {
 
         val databaseReference = FirebaseDatabase.getInstance().reference
@@ -67,51 +91,69 @@ class AddVacancyFragment : Fragment() {
             }
         })
 
-        binding.bExit.setOnClickListener {
-            findNavController().popBackStack()
-
-            binding.apply {
-                viewModel.spheraWork.value = "Сфера"
-                viewModel.expirence.value = "Опыт работы"
-                viewModel.city.value = "Город"
-                viewModel.hegreeEdu.value = "Образование"
-                viewModel.time.value = "График работы"
-                viewModel.description.value = "Напишите действия"
+        binding.apply {
+            bExit.setOnClickListener {
+                findNavController().popBackStack()
+                bClear()
             }
-        }
-
-        binding.bSave.setOnClickListener {
-
-            CoroutineScope(Dispatchers.Main).launch {
-                val spheraWork = viewModel.spheraWork.value.toString()
-                val hegreeEdu = viewModel.hegreeEdu.value.toString()
-                val time = viewModel.time.value.toString()
-                val expirence = viewModel.expirence.value.toString()
-                val city = viewModel.city.value.toString()
-                val description = viewModel.description.value.toString()
-                val name = binding.editName.text.toString()
-                val price = binding.edPrice.text.toString()
-                val gmail = binding.editGmail.text.toString()
-                val number = binding.editNumber.text.toString()
-                val title = binding.edTitle.text.toString()
-
-                saveToDatabase(
-                    spheraWork,
-                    time,
-                    expirence,
-                    hegreeEdu,
-                    city,
-                    price,
-                    description,
-                    name,
-                    gmail,
-                    number,
-                    verification,
-                    title,
-                )
+            checkBox.setOnCheckedChangeListener { _, isChecked ->
+                if (isChecked) {
+                    edPrice.isEnabled = false
+                    edPrice.setText("Договорная")
+                } else {
+                    edPrice.isEnabled = true
+                    edPrice.setText("")
+                }
             }
+
+            binding.bSave.setOnClickListener {
+                CoroutineScope(Dispatchers.Main).launch {
+                    val spheraWork = viewModel.spheraWork.value.toString()
+                    val hegreeEdu = viewModel.hegreeEdu.value.toString()
+                    val time = viewModel.time.value.toString()
+                    val expirence = viewModel.expirence.toString()
+                    val city = viewModel.city.value.toString()
+                    val description = viewModel.description.value.toString()
+                    val name = binding.editName.text.toString()
+                    val price = binding.edPrice.text.toString()
+                    val gmail = binding.editGmail.text.toString()
+                    val number = binding.editNumber.text.toString()
+                    val title = binding.edTitle.text.toString()
+
+                    if (spheraWork.isEmpty() || time.isEmpty() || expirence.isEmpty() || hegreeEdu.isEmpty() ||
+                        city.isEmpty() || description.isEmpty() || name.isEmpty() ||
+                        gmail.isEmpty() || number.isEmpty() || title.isEmpty()
+                    ) {
+                        Toast.makeText(
+                            context,
+                            "Пожалуйста, заполните все поля",
+                            Toast.LENGTH_SHORT
+                        )
+                            .show()
+
+                    } else {
+                        saveToDatabase(
+                            spheraWork,
+                            time,
+                            expirence,
+                            hegreeEdu,
+                            city,
+                            price,
+                            description,
+                            name,
+                            gmail,
+                            number,
+                            verification,
+                            title
+                        )
+                    }
+                }
+            }
+
+
         }
     }
+
 
     private fun initFirebase() {
         auth = FirebaseAuth.getInstance()
@@ -182,10 +224,9 @@ class AddVacancyFragment : Fragment() {
         Name: String,
         Gmail: String,
         Number: String,
-        verification:Boolean,
-        title:String
+        verification: Boolean,
+        title: String
     ) {
-
 
 
         val user = auth.currentUser
@@ -240,7 +281,9 @@ class AddVacancyFragment : Fragment() {
                             requireContext(),
                             "Данные успешно сохранены!",
                             Toast.LENGTH_SHORT
+
                         ).show()
+                        bClear()
 
                     }
                     .addOnFailureListener {

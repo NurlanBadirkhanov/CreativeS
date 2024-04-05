@@ -104,7 +104,7 @@ class SearchFragment  : Fragment() {
 
                 }
                 // Обновляем RecyclerView с найденными результатами
-                adapter.setData(searchData)
+                adapter.addAll(0,searchData)
                 hideProgressBar() // Скрываем прогресс бар после завершения загрузки
             }
 

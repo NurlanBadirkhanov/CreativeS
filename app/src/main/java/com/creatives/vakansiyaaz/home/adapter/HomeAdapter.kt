@@ -28,6 +28,15 @@ class HomeAdapter(private val context: Context) : RecyclerView.Adapter<HomeAdapt
         myList.clear()
         notifyDataSetChanged()
     }
+    fun addAll(position: Int, items: List<VacancyData>) {
+        myList.clear()
+        myList.addAll(position, items)
+        myList.reverse()
+        notifyItemRangeInserted(position, items.size)
+        notifyDataSetChanged()
+    }
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = HomeItemBinding.inflate(LayoutInflater.from(context), parent, false)
@@ -104,11 +113,11 @@ class HomeAdapter(private val context: Context) : RecyclerView.Adapter<HomeAdapt
 
                 }
                 if (it.price.isEmpty()){
-                    tvPrice.visibility = View.GONE
+                    tvPrice.text = "Договорная"
                 }
                 else{
                     val price = it.price
-                    tvPrice.text = "$price AZN"
+                    "$price AZN".also { tvPrice.text = it }
                 }
 
 
@@ -229,9 +238,5 @@ class HomeAdapter(private val context: Context) : RecyclerView.Adapter<HomeAdapt
         return dateFormat.format(Date(millis))
     }
 
-    fun setData(data: List<VacancyData>) {
-        myList.clear()
-        myList.addAll(data)
-        notifyDataSetChanged()
-    }
+
 }

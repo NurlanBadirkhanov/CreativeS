@@ -5,11 +5,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
+import com.creatives.vakansiyaaz.Profile.ItemProfile.MyAdsItem.MyAdsViewPager
 import com.creatives.vakansiyaaz.databinding.FragmentHomeBinding
 import com.creatives.vakansiyaaz.home.adapter.HomeAdapter
 import com.creatives.vakansiyaaz.home.adapter.VacancyData
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.coroutines.CoroutineScope
@@ -23,6 +28,7 @@ class HomeFragment : Fragment() {
     private lateinit var adapter: HomeAdapter
     private lateinit var auth:FirebaseAuth
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,6 +36,7 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -39,6 +46,10 @@ class HomeFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
 
     }
+
+
+
+
     private fun getDataFromFirebase() {
         CoroutineScope(Dispatchers.Main).launch {
             val database = FirebaseDatabase.getInstance()
@@ -79,7 +90,9 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
+
     }
 
 
 }
+

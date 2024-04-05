@@ -1,12 +1,11 @@
 package com.creatives.vakansiyaaz.ADD
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.SpinnerAdapter
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.creatives.vakansiyaaz.ADD.Spinners.SpinnerViewModel.SpinnerViewModel
@@ -15,7 +14,11 @@ import com.creatives.vakansiyaaz.databinding.FragmentAddLinkBinding
 import com.creatives.vakansiyaaz.home.navigate
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ServerValue
+import com.google.firebase.database.ValueEventListener
 import kotlin.properties.Delegates
 
 
@@ -54,19 +57,31 @@ class AddLinkFragment : Fragment() {
                 }.show()
         }
     }
+    private fun bClear() {
+        binding.apply {
+            val vm = viewModel
+            vm.spheraWork.value = "Сфера"
+            vm.expirence.value = "Опыт работы"
+            vm.city.value = "Город"
+            vm.hegreeEdu.value = "Образование"
+            vm.time.value = "График работы"
+            vm.description.value = "Напишите действия"
+            binding.edPrice.text.clear()
+            binding.edTitle.text.clear()
+            binding.edLink.text.clear()
+
+        }
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        bClear()
+    }
 
 
     private fun bOk() {
         binding.bExit.setOnClickListener {
             findNavController().popBackStack()
-            binding.apply {
-                viewModel.spheraWork.value = "Сфера"
-                viewModel.expirence.value = "Опыт работы"
-                viewModel.city.value = "Город"
-                viewModel.hegreeEdu.value = "Образование"
-                viewModel.time.value = "График работы"
-                viewModel.description.value = "Напишите действия"
-            }
+            bClear()
         }
         binding.bSave.setOnClickListener {
             val spheraWork = viewModel.spheraWork.value.toString()
@@ -75,7 +90,8 @@ class AddLinkFragment : Fragment() {
             val title = binding.edTitle.text.toString()
             val link = binding.edLink.text.toString()
 
-            if (city.isNotEmpty() && price.isNotEmpty() && title.isNotEmpty() && link.isNotEmpty()) {
+
+            if (city.isNotEmpty()  && title.isNotEmpty() && link.isNotEmpty()) {
                 saveToDatabase(
                     spheraWork,
                     city,
@@ -133,6 +149,15 @@ class AddLinkFragment : Fragment() {
             }
             bCity.setOnClickListener {
                 navigate(R.id.cityFragment)
+            }
+            checkBox.setOnCheckedChangeListener { _, isChecked ->
+                if (isChecked) {
+                    edPrice.isEnabled = false
+                    edPrice.setText("Договорная")
+                } else {
+                    edPrice.isEnabled = true
+                    edPrice.setText("")
+                }
             }
 
 
@@ -195,6 +220,8 @@ class AddLinkFragment : Fragment() {
                             "Данные успешно сохранены!",
                             Toast.LENGTH_SHORT
                         ).show()
+                        bClear()
+
 
                     }
                     .addOnFailureListener {

@@ -48,10 +48,9 @@ class AddVacancyProFragment : Fragment() {
         initFirebase()
         buttons()
         setupObserver()
-        bOk()
         bMaterialDialog()
         binding.bExit.setOnClickListener {
-            bOk()
+            bClear()
             popBack()
 
         }
@@ -71,17 +70,22 @@ class AddVacancyProFragment : Fragment() {
         }
     }
 
-    private fun bOk() {
-            binding.apply {
-                val vm = viewModel
-                vm.spheraWork.value = "Сфера"
-                vm.expirence.value = "Опыт работы"
-                vm.city.value = "Город"
-                vm.hegreeEdu.value = "Образование"
-                vm.time.value = "График работы"
-                vm.description.value = "Напишите действия"
-            }
+    private fun bClear() {
+        binding.apply {
+            val vm = viewModel
+            vm.spheraWork.value = "Сфера"
+            vm.expirence.value = "Опыт работы"
+            vm.city.value = "Город"
+            vm.hegreeEdu.value = "Образование"
+            vm.time.value = "График работы"
+            vm.description.value = "Напишите действия"
+            binding.editName.text.clear()
+            binding.edPrice.text.clear()
+            binding.editGmail.text.clear()
+            binding.editNumber.text.clear()
+            binding.edTitle.text.clear()
         }
+    }
 
 
 
@@ -150,6 +154,15 @@ class AddVacancyProFragment : Fragment() {
             bCity.setOnClickListener {
                 findNavController().navigate(R.id.cityFragment)
             }
+            checkBox.setOnCheckedChangeListener { _, isChecked ->
+                if (isChecked) {
+                    edPrice.isEnabled = false
+                    edPrice.setText("Договорная")
+                } else {
+                    edPrice.isEnabled = true
+                    edPrice.setText("")
+                }
+            }
             bSave.setOnClickListener {
                 val spheraWork = viewModel.spheraWork.value.toString()
                 val hegreeEdu = viewModel.hegreeEdu.value.toString()
@@ -165,7 +178,7 @@ class AddVacancyProFragment : Fragment() {
                 val nameOrg = binding.editNameOrg.text.toString()
 
                 if (spheraWork.isEmpty() || time.isEmpty() || expirence.isEmpty() || hegreeEdu.isEmpty() ||
-                    city.isEmpty() || price.isEmpty() || description.isEmpty() || name.isEmpty() ||
+                    city.isEmpty()  || description.isEmpty() || name.isEmpty() ||
                     gmail.isEmpty() || number.isEmpty() || title.isEmpty() || nameOrg.isEmpty()
                 ) {
                     Toast.makeText(context, "Пожалуйста, заполните все поля", Toast.LENGTH_SHORT)
@@ -203,7 +216,6 @@ class AddVacancyProFragment : Fragment() {
                                         title = title
 
                                     )
-                                    bOk()
                                 }.addOnFailureListener {
                                     // Ошибка при выполнении операции вычитания из баланса
                                 }
@@ -302,6 +314,7 @@ class AddVacancyProFragment : Fragment() {
                             getString(R.string.saveOk),
                             Toast.LENGTH_SHORT
                         ).show()
+                        bClear()
 
                     }
                     .addOnFailureListener {
@@ -322,5 +335,10 @@ class AddVacancyProFragment : Fragment() {
         }
 
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        bClear()
     }
 }

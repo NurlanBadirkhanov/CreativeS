@@ -12,4 +12,6 @@
         <item name="queryHint">Search</item>
     </style>
 
+    <style name="TabLayoutTextSize"></style>
+
 </resources>

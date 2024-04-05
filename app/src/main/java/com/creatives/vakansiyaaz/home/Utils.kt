@@ -72,7 +72,7 @@ suspend fun fetchProductsFromCategory1(
                         productSnapshot.child("education").getValue(String::class.java)
                     val timeWork =
                         productSnapshot.child("timeWork").getValue(String::class.java)
-                    val date = productSnapshot.child("date").getValue(Long::class.java)
+                    val date = productSnapshot.child("data").getValue(Long::class.java)
                     val link = productSnapshot.child("link").getValue(String::class.java)
                     val idElement = productSnapshot.child("idElement").getValue(Int::class.java)
 
@@ -87,7 +87,7 @@ suspend fun fetchProductsFromCategory1(
                         id = id ?: "",
                         companyName = companyName ?: "",
                         title = title ?: "",
-                        price = price ?: "",
+                        price = price ?: "Договорная",
                         city = city ?: "",
                         desc = description ?: "",
                         name = name ?: "",
@@ -106,7 +106,8 @@ suspend fun fetchProductsFromCategory1(
                 }
 
 
-                adapter.setData(powerbankProducts)
+                adapter.addAll(0,powerbankProducts)
+                powerbankProducts.sortByDescending { it.data }
 
                 progressBar.visibility = View.GONE
 
@@ -162,7 +163,7 @@ suspend fun fetchProductsFromCategoryHome2Adapter(
                     val timeWork =
                         productSnapshot.child("timeWork").getValue(String::class.java)
 
-                    val date = productSnapshot.child("date").getValue(Long::class.java)
+                    val date = productSnapshot.child("data").getValue(Long::class.java)
                     val link = productSnapshot.child("link").getValue(String::class.java)
 
 
@@ -180,7 +181,7 @@ suspend fun fetchProductsFromCategoryHome2Adapter(
                         id = id ?: "",
                         companyName = companyName ?: "",
                         title = title ?: "",
-                        price = price ?: "",
+                        price = price ?: "Договорная",
                         city = city ?: "",
                         desc = description ?: "",
                         name = name ?: "",
@@ -255,7 +256,7 @@ fun fetchProductsFromCategoryMyAds(
                     val timeWork =
                         productSnapshot.child("timeWork").getValue(String::class.java)
 
-                    val date = productSnapshot.child("date").getValue(Long::class.java)
+                    val date = productSnapshot.child("data").getValue(Long::class.java)
                     val link = productSnapshot.child("link").getValue(String::class.java)
                     val idElement = productSnapshot.child("idElement").getValue(Int::class.java)
 
@@ -270,7 +271,7 @@ fun fetchProductsFromCategoryMyAds(
                         id = id ?: "",
                         companyName = companyName ?: "",
                         title = title ?: "",
-                        price = price ?: "",
+                        price = price ?: "Договорная",
                         city = city ?: "",
                         desc = description ?: "",
                         name = name ?: "",

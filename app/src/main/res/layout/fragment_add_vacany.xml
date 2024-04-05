@@ -108,7 +108,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:hint="@string/title"
-                            android:inputType="text|textCapWords" />
+                            android:inputType="text|textCapWords"
+                            android:textColor="#000000" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -252,19 +253,38 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-                <com.google.android.material.textfield.TextInputLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#FFFFFF"
+                    android:checked="false"
+                    android:textColor="#000000"
+                    android:textColorLink="#000000"
+                    app:boxStrokeColor="#000000"
+                    app:buttonIconTint="#FBFBFB"
+                    app:buttonTint="#150202"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginBottom="5dp"
                     android:scrollbarStyle="outsideInset"
                     android:textColorHint="@color/selector_homeclick_background"
                     app:boxBackgroundMode="none"
                     app:boxStrokeColor="#00BCD4"
                     app:endIconScaleType="center"
                     app:hintTextColor="@color/selector_homeclick_background"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/checkBox"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
@@ -277,6 +297,10 @@
                         android:textColor="@color/black" /> <!-- Используйте text|textMultiLine -->
 
                 </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/bCity"

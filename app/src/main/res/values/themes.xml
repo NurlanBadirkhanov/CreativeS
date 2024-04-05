@@ -8,6 +8,9 @@
 
     <style name="Theme.Vakansiyaaz" parent="Base.Theme.Vakansiyaaz" />
 
+    <style name="TabLayoutTextSize1" parent="TextAppearance.Design.Tab" >
+        <item name="android:textSize">14sp</item>
+    </style>
 
     <style name="HomeButton" parent="Widget.AppCompat.Button">
         <item name="android:layout_width">0dp</item>

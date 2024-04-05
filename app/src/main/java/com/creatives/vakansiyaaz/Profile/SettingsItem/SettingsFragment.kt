@@ -32,11 +32,14 @@ class SettingsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         buttons()
+        val versionName = requireContext().packageManager.getPackageInfo(requireContext().packageName, 0).versionName
+        binding.tvVersion.text = "Версия приложения: $versionName"
+
     }
 
     override fun onStop() {
         super.onStop()
-        activity!!.window.statusBarColor = originalStatusBarColor
+        requireActivity().window.statusBarColor = originalStatusBarColor
     }
 
 

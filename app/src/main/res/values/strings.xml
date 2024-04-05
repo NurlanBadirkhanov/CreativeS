@@ -64,8 +64,12 @@
     <string name="rules_19">16. Соблюдение этических стандартов: Правила могут также включать требования к соблюдению этических стандартов в сфере трудоустройства и размещения вакансий.</string>
     <string name="rules_title">Правила Размещения\nВакансий</string>
     <string name="vakanciya_az">С Уважением Vakanciya.az</string>
-    <string name="kiraye.az">С Уважением Vakanciya.az</string>
-    <string name="title">Заголовок</string>
+    <string name="kiraye.az" translatable="false">С Уважением Vakanciya.az</string>
+    <string name="title">Başlıq</string>
+    <string name="google">Google müvəqqəti olaraq işləmir!</string>
+    <string name="price_text_isEmptv">Договорная</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>>
 
 
 </resources>
