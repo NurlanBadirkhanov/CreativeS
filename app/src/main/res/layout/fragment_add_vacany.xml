@@ -443,11 +443,10 @@
                     android:layout_marginEnd="5dp"
                     android:layout_marginBottom="5dp"
                     android:scrollbarStyle="outsideInset"
-                    android:textColorHint="@color/selector_edittext360_background_"
+                    android:textColorHint="@color/black"
                     app:boxBackgroundMode="none"
                     app:boxStrokeColor="#00BCD4"
                     app:endIconScaleType="center"
-                    app:hintTextColor="@color/selector_homeclick_background"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -457,7 +456,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:hint="Напишите Имя*"
-                        android:textColor="#000000" />
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -467,11 +467,10 @@
                     android:layout_marginEnd="5dp"
                     android:layout_marginBottom="5dp"
                     android:scrollbarStyle="outsideInset"
-                    android:textColorHint="@color/selector_edittext360_background_"
+                    android:textColorHint="@color/black"
                     app:boxBackgroundMode="none"
                     app:boxStrokeColor="#00BCD4"
                     app:endIconScaleType="center"
-                    app:hintTextColor="@color/selector_homeclick_background"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -481,7 +480,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:hint="Напишите Gmail*"
-                        android:textColor="#000000" />
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -491,22 +491,22 @@
                     android:layout_marginEnd="5dp"
                     android:layout_marginBottom="5dp"
                     android:scrollbarStyle="outsideInset"
-                    android:textColorHint="@color/selector_edittext360_background_"
+                    android:textColorHint="@color/black"
                     app:boxBackgroundMode="none"
                     app:boxStrokeColor="#00BCD4"
                     app:endIconScaleType="center"
-                    app:hintTextColor="@color/selector_homeclick_background"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <EditText
-                        android:inputType="number|textCapWords"
                         android:id="@+id/editNumber"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:hint="Напишите номер*"
-                        android:textColor="#000000" />
+                        android:inputType="number|textCapWords"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>

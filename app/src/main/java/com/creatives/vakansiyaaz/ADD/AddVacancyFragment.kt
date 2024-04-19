@@ -120,9 +120,13 @@ class AddVacancyFragment : Fragment() {
                     val number = binding.editNumber.text.toString()
                     val title = binding.edTitle.text.toString()
 
-                    if (spheraWork.isEmpty() || time.isEmpty() || expirence.isEmpty() || hegreeEdu.isEmpty() ||
-                        city.isEmpty() || description.isEmpty() || name.isEmpty() ||
-                        gmail.isEmpty() || number.isEmpty() || title.isEmpty()
+                    if (spheraWork.isEmpty() || time.isEmpty()
+                        || expirence.isEmpty()
+                        || hegreeEdu.isEmpty()
+                        || city.isEmpty()
+                        || description.isEmpty()
+                        || gmail.isEmpty()
+                        || title.isEmpty()
                     ) {
                         Toast.makeText(
                             context,

@@ -8,6 +8,7 @@
     <color name="hint_text_color">#D4D4D4</color>
     <color name="black_overlay">#66000000</color>
 
+    <color name="dark_background">#111111</color>
 
     <!-- Цвета для светлой темы -->
     <color name="colorPrimary">#3F51B5</color>

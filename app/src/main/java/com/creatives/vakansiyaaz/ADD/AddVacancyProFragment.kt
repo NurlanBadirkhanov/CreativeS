@@ -177,9 +177,15 @@ class AddVacancyProFragment : Fragment() {
                 val title = binding.edTitle.text.toString()
                 val nameOrg = binding.editNameOrg.text.toString()
 
-                if (spheraWork.isEmpty() || time.isEmpty() || expirence.isEmpty() || hegreeEdu.isEmpty() ||
-                    city.isEmpty()  || description.isEmpty() || name.isEmpty() ||
-                    gmail.isEmpty() || number.isEmpty() || title.isEmpty() || nameOrg.isEmpty()
+                if (spheraWork.isEmpty()
+                    || time.isEmpty()
+                    || expirence.isEmpty()
+                    || hegreeEdu.isEmpty()
+                    || city.isEmpty()
+                    || description.isEmpty()
+                    || gmail.isEmpty()
+                    || title.isEmpty()
+                    || nameOrg.isEmpty()
                 ) {
                     Toast.makeText(context, "Пожалуйста, заполните все поля", Toast.LENGTH_SHORT)
                         .show()

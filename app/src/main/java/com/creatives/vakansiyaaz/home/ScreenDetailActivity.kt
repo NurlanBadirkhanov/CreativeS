@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.creatives.vakansiyaaz.databinding.ActivityScreenDetailBinding
 import com.creatives.vakansiyaaz.home.adapter.Home2Adapter
-import com.creatives.vakansiyaaz.home.adapter.HomeAdapter
 import com.creatives.vakansiyaaz.home.adapter.VacancyData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -18,6 +17,9 @@ import com.google.firebase.database.ValueEventListener
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class ScreenDetailActivity : AppCompatActivity() {
 
@@ -55,7 +57,7 @@ class ScreenDetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun setGetLikeForBase(){
+    private fun setGetLikeForBase() {
         val add = binding.bDisLike
         val delete = binding.bLike
 
@@ -85,6 +87,7 @@ class ScreenDetailActivity : AppCompatActivity() {
         })
 
     }
+
     private fun deleteElementInBasket() {
 
         val auth = FirebaseAuth.getInstance()
@@ -99,6 +102,7 @@ class ScreenDetailActivity : AppCompatActivity() {
         basketRef.child(productIdToRemove).removeValue()
 
     }
+
     private fun setNewElementCortFirebase() {
         val auth = FirebaseAuth.getInstance()
         val database = FirebaseDatabase.getInstance()
@@ -113,6 +117,10 @@ class ScreenDetailActivity : AppCompatActivity() {
 
     }
 
+    private fun convertMillisToDateString(millis: Long): String {
+        val dateFormat = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
+        return dateFormat.format(Date(millis))
+    }
 
     private fun getProduct() {
         getProduct = (intent.getSerializableExtra("data") as VacancyData)
@@ -138,13 +146,16 @@ class ScreenDetailActivity : AppCompatActivity() {
             if (getProduct.city.isEmpty()) {
                 tvCity.visibility = View.GONE
             } else {
-                tvCity.text = getProduct.city
+                val city = "Город вакансии: ${getProduct.city}"
+                tvCity.text = city
             }
 
             if (getProduct.data == null) {
                 tvData.visibility = View.GONE
             } else {
-                tvData.text = getProduct.data.toString()
+                val convert = convertMillisToDateString(getProduct.data)
+                val date = "Дата вакансии: $convert"
+                tvData.text = date
             }
 
 
@@ -158,19 +169,34 @@ class ScreenDetailActivity : AppCompatActivity() {
             if (getProduct.name.isEmpty()) {
                 tvName.visibility = View.GONE
             } else {
-                tvName.text = getProduct.name
+                val name = "Имя работодателя: ${getProduct.name}"
+                tvName.text = name
             }
 
             if (getProduct.experience.isEmpty()) {
                 tvExpirience.visibility = View.GONE
             } else {
-                tvExpirience.text = getProduct.experience
+                val expiriencePerson = "Опыт работы: ${getProduct.experience}"
+                tvExpirience.text = expiriencePerson
             }
 
             if (getProduct.title.isEmpty()) {
                 tvTitle.visibility = View.GONE
+
             } else {
                 tvTitle.text = getProduct.title
+            }
+
+            if (getProduct.companyName.isEmpty()) {
+                tvNameOrg.visibility = View.GONE
+
+            } else {
+                if (getProduct.verification) {
+                    imageView25.visibility = View.VISIBLE
+                } else {
+                    imageView25.visibility = View.INVISIBLE
+                }
+                tvNameOrg.text = getProduct.companyName
             }
 
             if (getProduct.price.isEmpty()) {
@@ -180,19 +206,26 @@ class ScreenDetailActivity : AppCompatActivity() {
                 tvPrice.text = price
 
             }
-
+            ///График работы
             if (getProduct.timeWork.isEmpty()) {
                 tvWork.visibility = View.GONE
             } else {
-                tvWork.text = getProduct.timeWork
+                val graph = "График работы: ${getProduct.timeWork}"
+                tvWork.text = graph
+            }
+            if (getProduct.sphera.isEmpty()) {
+                tvSphera.visibility = View.GONE
+            } else {
+                val sphera = "Сфера работы: ${getProduct.sphera}"
+                tvSphera.text = sphera
             }
 
             if (getProduct.number.isEmpty()) {
                 tvNumber.visibility = View.GONE
                 bCall.visibility = View.GONE
-            }
-            else {
-                tvNumber.text = getProduct.number
+            } else {
+                val number = "Номер работодателя: ${getProduct.number}"
+                tvNumber.text = number
                 bCall.setOnClickListener {
                     val dialIntent = Intent(Intent.ACTION_DIAL)
                     dialIntent.data = Uri.parse("tel:${getProduct.number}")
@@ -202,12 +235,22 @@ class ScreenDetailActivity : AppCompatActivity() {
 
             if (getProduct.gmail.isEmpty()) {
                 tvGmail.visibility = View.GONE
+                bGmail.visibility = View.GONE
+
             } else {
-                tvGmail.text = getProduct.gmail
+                val gmail = "Почта работодателя: ${getProduct.gmail} "
+                tvGmail.text = gmail
+                bGmail.setOnClickListener {
+                    val email = getProduct.gmail
+                    val intent = Intent(Intent.ACTION_SENDTO).apply {
+                        // Устанавливаем адрес электронной почты в качестве данных для Intent
+                        data = Uri.parse("mailto:$email")
+
+                    }
+                    startActivity(intent)
+                }
+
             }
-
-
-
 
 
         }
@@ -227,6 +270,7 @@ class ScreenDetailActivity : AppCompatActivity() {
         }
 
     }
+
     private fun getDataFromFirebase() {
 
         CoroutineScope(Dispatchers.Main).launch {

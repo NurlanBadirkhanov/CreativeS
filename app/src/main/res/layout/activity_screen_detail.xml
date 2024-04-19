@@ -4,8 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="10dp"
-    android:layout_marginBottom="10dp"
     android:fitsSystemWindows="true"
     tools:context=".home.ScreenDetailActivity">
 
@@ -23,7 +21,6 @@
             android:layout_width="30dp"
             android:layout_height="35dp"
             android:layout_marginStart="16dp"
-            android:backgroundTint="@color/selector_homeclick_background"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
             android:src="@drawable/baseline_arrow_back_ios_new_24"
@@ -45,8 +42,8 @@
 
         <ImageButton
             android:id="@+id/bDisLike"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
+            android:layout_width="45dp"
+            android:layout_height="50dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/background1"
             android:backgroundTint="@color/signin"
@@ -60,8 +57,8 @@
 
         <ImageButton
             android:id="@+id/bLike"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
+            android:layout_width="45dp"
+            android:layout_height="50dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/background1"
             android:backgroundTint="@color/signin"
@@ -101,109 +98,204 @@
 
                 <TextView
                     android:id="@+id/tvTitle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="TextView"
-                    android:textSize="30sp"
+                    android:textSize="34sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+
 
                 <TextView
                     android:id="@+id/tvPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
                     android:text="TextView"
-                    android:textSize="28sp"
+                    android:textSize="30sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
-                <TextView
-                    android:id="@+id/tvWork"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="TextView"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
-
-                <TextView
-                    android:id="@+id/tvGmail"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="TextView" />
+                    android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/tvExpirience"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="TextView"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvWork" />
+                    <TextView
+                        android:id="@+id/tvNameOrg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="#836200"
+                        android:textSize="30sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
-                <TextView
-                    android:id="@+id/tvNumber"
+                    <ImageView
+                        android:id="@+id/imageView25"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="8dp"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvNameOrg"
+                        app:layout_constraintStart_toEndOf="@+id/tvNameOrg"
+                        app:layout_constraintTop_toTopOf="@+id/tvNameOrg"
+                        app:srcCompat="@drawable/baseline_verified_24" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="3dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="TextView"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvWork" />
+                    android:layout_height="0.5dp"
+                    android:background="#52B6B5B5"
+                    android:orientation="vertical">
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tvData"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="TextView"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvWork" />
+                    android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/tvCity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="TextView"
-                    app:layout_constraintTop_toBottomOf="@+id/tvExpirience"
-                    tools:layout_editor_absoluteX="25dp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/tvName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="TextView" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            app:layout_constraintWidth_percent="0.5">
+
+                            <TextView
+                                android:id="@+id/tvSphera"
+                                android:layout_marginTop="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="TextView"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_marginTop="5dp"
+                                android:id="@+id/tvName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="TextView"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/tvWork"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="TextView"
+                                android:layout_marginTop="5dp"
+
+                                android:textSize="20sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
+
+                            <TextView
+                                android:id="@+id/tvGmail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="TextView"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/tvExpirience"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="TextView"
+                                android:textSize="20sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvWork" />
+
+                            <TextView
+                                android:id="@+id/tvNumber"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="TextView"
+                                android:textSize="20sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvWork" />
+
+                            <TextView
+                                android:id="@+id/tvData"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="TextView"
+                                android:textSize="20sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvWork" />
+
+                            <TextView
+                                android:id="@+id/tvCity"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+
+                                android:text="TextView"
+                                android:textSize="20sp"
+                                app:layout_constraintTop_toBottomOf="@+id/tvExpirience"
+                                tools:layout_editor_absoluteX="25dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+            </LinearLayout>
 
-
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="3dp"
+                android:background="#52B6B5B5"
+                android:orientation="vertical">
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp">
+
+                <TextView
+                    android:id="@+id/textView38"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Подробнее о Вакансии"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tvDesc"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="4dp"
                     android:layout_marginBottom="8dp"
                     android:text="TextView"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/textView38" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -220,10 +312,11 @@
                     android:background="@drawable/background1"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:text="Перейти по ссылке"
-                    android:textSize="12sp"
+                    android:textSize="14sp"
                     android:visibility="visible"
                     app:backgroundTint="@color/signin"
                     app:icon="@drawable/baseline_insert_link_24"
+                    app:iconTint="@color/awhite"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -234,17 +327,35 @@
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
                     android:background="@drawable/background1"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:text="Позвонить"
                     android:visibility="visible"
                     app:backgroundTint="@color/selector_homeclick_background"
                     app:icon="@android:drawable/stat_sys_phone_call"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:iconTint="@color/awhite"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/bLink" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/bGmail"
+                    style="@style/HomeButton"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/background1"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:text="Написать по Почте"
+                    android:visibility="visible"
+                    app:backgroundTint="#8C1010"
+                    app:icon="@drawable/baseline_email_25"
+                    app:iconTint="#FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bCall" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout

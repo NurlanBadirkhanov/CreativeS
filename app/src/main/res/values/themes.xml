@@ -42,10 +42,20 @@
 <!--        <item name="myConstraintLayoutStyle">@style/MyConstraintLayoutStyle</item>-->
 <!--    </style>-->
 
-<!--    <style name="AppTheme.Dark" parent="Theme.AppCompat">-->
-<!--        <item name="myConstraintLayoutStyle">@style/MyConstraintLayoutStyle</item>-->
+<!--    <style name="MyConstraintLayoutStyle" parent="Widget.ConstraintLayout">-->
+<!--        <item name="android:background">#FFFFFF</item> &lt;!&ndash; Белый цвет фона &ndash;&gt;-->
 <!--    </style>-->
 
+    <style name="AppTheme.Dark" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:background">@color/white</item> <!-- Белый фон -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/black</item>
+        <!-- Customize your theme here. -->
+    </style>
 
 
 

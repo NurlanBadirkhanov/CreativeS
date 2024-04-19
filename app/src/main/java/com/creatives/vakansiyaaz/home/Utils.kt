@@ -55,16 +55,19 @@ suspend fun fetchProductsFromCategory1(
                     val verification =
                         productSnapshot.child("verification").getValue(Boolean::class.java)
 
+
                     val name = productSnapshot.child("name").getValue(String::class.java)
                     val number = productSnapshot.child("number").getValue(String::class.java)
-                    val gmail = productSnapshot.child("gmail").getValue(String::class.java)
+                    val gmail = productSnapshot.child("Gmail").getValue(String::class.java)
 
 
                     val companyName =
                         productSnapshot.child("nameOrg").getValue(String::class.java)
                     val uniqueId =
                         productSnapshot.child("uniqueId").getValue(String::class.java)
+
                     val work = productSnapshot.child("work").getValue(String::class.java)
+
                     val sphera = productSnapshot.child("sphera").getValue(String::class.java)
                     val experience =
                         productSnapshot.child("experience").getValue(String::class.java)
@@ -147,7 +150,7 @@ suspend fun fetchProductsFromCategoryHome2Adapter(
 
                     val name = productSnapshot.child("name").getValue(String::class.java)
                     val number = productSnapshot.child("number").getValue(String::class.java)
-                    val gmail = productSnapshot.child("gmail").getValue(String::class.java)
+                    val gmail = productSnapshot.child("Gmail").getValue(String::class.java)
 
 
                     val companyName =
@@ -240,7 +243,7 @@ fun fetchProductsFromCategoryMyAds(
 
                     val name = productSnapshot.child("name").getValue(String::class.java)
                     val number = productSnapshot.child("number").getValue(String::class.java)
-                    val gmail = productSnapshot.child("gmail").getValue(String::class.java)
+                    val gmail = productSnapshot.child("Gmail").getValue(String::class.java)
 
 
                     val companyName =
